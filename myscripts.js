@@ -9,9 +9,7 @@ $(document).ready(function(){
 
 	drawSquares();
 
-	$('.square').mouseenter(function(){
-		$(this).addClass("highlighted");
-	});
+
 
     $(document).on('click','.button',function(){
     	$grid = prompt("Enter the the number of columns/rows",16);
@@ -19,6 +17,7 @@ $(document).ready(function(){
     		$grid = prompt("Plese Enter a valid column/row number",16);
     	};
 		drawSquares();
+
     });
 	function drawSquares(){
 		$('.square').remove('.square');
@@ -27,6 +26,9 @@ $(document).ready(function(){
 			$('.square').css("height",100/$grid+"%");
 			$('.wrapper').append($square);
 		};
+		$('.square').mouseenter(function(){
+			$(this).addClass("highlighted");
+		});
 	}
 });
 
